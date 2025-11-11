@@ -35,6 +35,12 @@ export default function Home() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAccessAppClick();
+    }
+  };
+
   return (
     <div>
       <div className="w-10/12 mx-auto border-gray-300 p-6 shadow-md my-14 rounded-lg">
@@ -52,6 +58,7 @@ export default function Home() {
           placeholder="Enter secure code"
           value={secureCode}
           onChange={(e) => setSecureCode(e.target.value)}
+          onKeyDown={handleKeyDown}
           className="p-3 border border-gray-400 rounded-md mt-5 w-full"
         />
 
